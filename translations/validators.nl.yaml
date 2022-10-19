@@ -1,0 +1,4 @@
+'Please enter a password': 'Vul een wachtwoord in aub'
+'There is already an account with this email': 'Er gebruikt al een account dit email adres.'
+'You should agree to our terms.': 'U dient onze gebruiksvoorwaarden te accepteren.'
+'Your password should be at least {{ limit }} characters': 'Uw wachtwoord moet minstens {{ limit }} karakters lang zijn'

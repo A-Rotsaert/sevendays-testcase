@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container d-flex">
+        {% include 'partials/sidemenu.html.twig'
+            with {'items': [
+            {
+                'path': 'app_user_profile',
+                'label': 'app.menu.profile' | trans | capitalize,
+            },
+            {
+                'path': 'app_family',
+                'label': 'app.menu.families' | trans | capitalize,
+            },
+        ]} %}
+        <div class="justify-content-center col-5 m-4 p-4">
+            <h4>
+                {{ 'app.child_form.title'|trans }}
+            </h4>
+            {{ form_start(form) }}
+
+            <div class="row mt-4">
+                <div class="col-12">{{ form_row(form.name) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-4">{{ form_row(form.gender) }}</div>
+                <div class="col-4">{{ form_row(form.height) }}</div>
+                <div class="col-4">{{ form_row(form.birthday) }}</div>
+            </div>
+
+            <div class="btn-group">
+                <a href="{{ path('app_family_edit', {id: data.family.getId()}) }}"
+                   class="btn btn-outline-info">
+                    {{ 'app.go_back'|trans }}
+                </a>
+                {% if data.data.name %}
+                    <button class="btn btn-danger text-white" id="delete_child"
+                            type="button"
+                            data-delete-url="{{ path('app_family_child_delete', {familyId: data.family.id, childId: data.data.id}) }}"
+                            data-delete-message="{{ 'app.delete.confirm'|trans({'%type%': 'app.child'|trans }) }}">
+                        {{ 'app.delete.title'|trans|capitalize }}
+                    </button>
+                {% endif %}
+                <button class="btn btn-primary text-white" type="submit">
+                    {{ 'app.save_details'|trans }}
+                </button>
+            </div>
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('datepicker') }}
+    {{ encore_entry_script_tags('app_family_children_modify') }}
+{% endblock %}

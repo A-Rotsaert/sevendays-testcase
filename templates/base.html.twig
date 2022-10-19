@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Sevendays">
+    <title>{% block title %}Sevendays Child Advisor{% endblock %}</title>
+    {{ encore_entry_link_tags('app') }}
+    {% block stylesheets %}
+    {% endblock %}
+
+    {{ encore_entry_script_tags('app') }}
+    {% block javascripts %}
+    {% endblock %}
+</head>
+<body class="d-flex flex-column min-vh-100">
+<div class="row me-1">
+    {% include 'form/errors.html.twig' %}
+    {% block errors %}
+    {% endblock %}
+</div>
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    {% include('partials/navbar.html.twig') %}
+{% endif %}
+<div class="container">
+    <div class="row">
+        <turbo-frame id="main-frame">
+            {% block body %}{% endblock %}
+        </turbo-frame>
+    </div>
+</div>
+{% include('partials/footer.html.twig') %}
+
+</body>
+</html>

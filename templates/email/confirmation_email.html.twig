@@ -1,0 +1,16 @@
+<body>
+<div class="container">
+    {% include('partials/app-logo.html.twig') %}
+    <div class="card p-6 p-lg-10 space-y-4">
+        <h1 class="h3 fw-700">
+            {{ 'app.confirmation_email.title'|trans }}
+        </h1>
+        <p>
+            {{ 'app.confirmation_email.please_confirm'|trans }}: <br><br>
+            <a href="{{ signedUrl }}"
+               class="btn btn-primary p-3 fw-700">{{ 'app.confirmation_email.confirm_email'|trans }}</a>
+            <small class="text-muted">{{ 'app.confirmation_email.expires_in'|trans }} {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}</small>
+        </p>
+    </div>
+</div>
+</body>

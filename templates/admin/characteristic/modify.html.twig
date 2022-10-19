@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container d-flex">
+        {% include 'partials/sidemenu.html.twig'
+            with {'items': [
+            {
+                'path': 'app_admin_dashboard',
+                'label': 'app.menu.admin' | trans | capitalize,
+            },
+            {
+                'path': 'app_admin_user_management',
+                'label': 'app.menu.user_management' | trans | capitalize,
+            },
+            {
+                'path': 'app_admin_characteristics',
+                'label': 'app.menu.characteristics' | trans | capitalize,
+                'active': 'active',
+            }
+        ]} %}
+        <div class="justify-content-center col-5 m-4 p-4">
+            <h4>
+                {{ 'app.menu.characteristics'|trans|capitalize }}
+            </h4>
+            {{ form_start(form) }}
+            <div class="row">
+                {{ form_row(form.translations) }}
+            </div>
+            <div class="row">
+                <div class="col-4">{{ form_row(form.amountType) }}</div>
+                <div class="col-4">{{ form_row(form.minAge) }}</div>
+            </div>
+
+            <div class="btn-group">
+                <a href="{{ path('app_admin_characteristics') }}" type="button" class="btn btn-outline-secondary">
+                    {{ 'app.go_back'|trans }}
+                </a>
+                <button class="btn btn-primary text-white" type="submit">
+                    {{ 'app.save_details'|trans }}
+                </button>
+            </div>
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

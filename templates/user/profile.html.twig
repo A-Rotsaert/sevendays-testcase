@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container d-flex">
+        {% include 'partials/sidemenu.html.twig'
+            with {'items': [
+            {
+                'path': 'app_user_profile',
+                'label': 'app.menu.profile' | trans | capitalize,
+                'active': 'active',
+            },
+            {
+                'path': 'app_family',
+                'label': 'app.menu.family' | trans | capitalize,
+            },
+        ]} %}
+        <div class="justify-content-center col-5 m-4 p-4">
+            <h4>
+                {{ 'app.user_profile_form.title'|trans }}
+            </h4>
+            {{ form_start(form) }}
+
+            <div class="row mt-4">
+                <div class="col-8">{{ form_row(form.name) }}</div>
+                <div class="col-4">{{ form_row(form.locale) }}</div>
+            </div>
+            {{ form_row(form.location) }}
+            {% if form.vars.submitted != true and form.vars.value.name is null or form.vars.value.location is null %}
+                {{ form_widget(form.families) }}
+            {% endif %}
+            <button class="btn btn-primary text-white" type="submit">
+                {{ 'app.save_details'|trans }}
+            </button>
+
+            {{ form_end(form) }}
+
+            {% if form.vars.value.name is not null or form.vars.value.location is not null %}
+                <div class="mt-4">
+                    <a href="#"
+                       onclick="confirmDelete()">{{ 'app.click_here'|trans }}</a>&nbsp;{{ 'app.user_profile_form.message'|trans }}
+                    <br/>
+                    <small class="text-warning">{{ 'app.user_profile_form.warning'|trans }}</small>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        confirmDelete = function () {
+            if (confirm('{{ 'app.delete.confirm'|trans({'%type%': 'app.menu.profile'|trans}) }}')) {
+                window.location.replace('{{ url('app_user_delete_profile') }}');
+            }
+        }
+    </script>
+{% endblock %}

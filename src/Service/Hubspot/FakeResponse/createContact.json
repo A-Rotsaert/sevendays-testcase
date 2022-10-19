@@ -1,0 +1,16 @@
+{
+  "id": "1",
+  "properties": {
+    "company": null,
+    "createdate": null,
+    "email": null,
+    "firstname": null,
+    "lastmodifieddate": null,
+    "lastname": null,
+    "phone": null,
+    "website": null
+  },
+  "createdAt": null,
+  "updatedAt": null,
+  "archived": false
+}

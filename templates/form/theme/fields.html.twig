@@ -1,0 +1,41 @@
+{% block datalist_row %}
+    <div class="form-group">
+        <label for="{{ form.vars.id }}" class="form-label">{{ form.vars.label }}:</label>
+        <input class="form-control" list="{{ form.vars.id }}_datalist_options" id="{{ form.vars.id }}"
+               name="{{ form.vars.full_name }}" placeholder="Type to search..." {{ block('widget_attributes') }}>
+        <datalist id="{{ form.vars.id }}_datalist_options">
+            {% for option in form.vars.choices %}
+                <option value="{{ option.label }}"></option>
+            {% endfor %}
+        </datalist>
+    </div>
+{% endblock %}
+
+{% block form_label %}
+    {{ form.vars.label|default('app.' ~ form.parent.vars.name ~ '.' ~ form.vars.name)|trans }}
+{% endblock %}
+
+{% block form_errors %}
+    {% if errors|length > 0 %}
+        {% for error in errors %}
+            <div class="invalid-feedback">{{ error.message }}</div>&nbsp;
+        {% endfor %}
+    {% endif %}
+{% endblock form_errors %}
+
+{% block location_form_row %}
+    <div class="row">
+        <div class="col-8">
+            {{ form_row(form.city) }}
+        </div>
+        <div class="col-4">
+            {{ form_row(form.country) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block _user_profile_form_families_widget %}
+    {% for child in form %}
+        {{ form_row(child.name) }}
+    {% endfor %}
+{% endblock %}

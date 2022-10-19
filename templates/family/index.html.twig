@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container d-flex">
+        {% include 'partials/sidemenu.html.twig'
+            with {'items': [
+            {
+                'path': 'app_user_profile',
+                'label': 'app.menu.profile' | trans | capitalize,
+            },
+            {
+                'path': 'app_family',
+                'label': 'app.menu.families' | trans | capitalize,
+                'active': 'active'
+            },
+        ]} %}
+        <div class="col-10">
+            <h4 class="text-left mt-5 ml-2">{{ 'app.overview'|trans|capitalize }}
+                &nbsp;{{ 'app.menu.families'|trans }}</h4>
+            <div class="d-flex flex-row-reverse">
+                <a href="{{ path('app_family_add') }}">
+                    <div class="btn btn-outline-primary m-2"><i class="fas fa-plus"></i>
+                        {{ 'app.menu.family'|trans|capitalize }}&nbsp;{{ 'app.add.title'|trans }}
+                    </div>
+                </a>
+            </div>
+            <div class="row">
+                {% for family in families %}
+                    <div class="col-3 m-3">
+                        <a href="{{ path('app_family_edit', {'id': family.id}) }}"
+                           class="text-decoration-none text-muted">
+                            <div class="card" style="width: 18rem;">
+                                <i class="fa-solid fa-people-roof fa-8x bg-primary text-white text-center p-4"></i>
+                                <div class="card-body">
+                                    <div class="card-text">
+                                        <h4 class="text-left text-dark">{{ family.name }}</h4>
+                                        <div class="row">
+                                            <div class="col-8">{{ 'app.family_form.childs_in_family'|trans }}</div>
+                                            <div class="col-4">{{ family.children|length }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

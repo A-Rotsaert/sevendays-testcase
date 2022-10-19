@@ -1,0 +1,128 @@
+app:
+  name: Child advisor
+  register: Register
+  login: Login
+  for: for
+  to: to
+  specialized_advice: specialized advice tailored for your kid.
+  click_here: Click here
+  go_back: Go back
+  save_details: Save details
+  child: child
+  your_profile: your profile
+  overview: overview
+  total: total
+  amount: amount
+
+  en:
+    name: Name
+
+  add:
+    title: Add
+    success: Your %type% has been added.
+
+  edit:
+    title: edit
+    success: Your have edited your %type%.
+
+  delete:
+    title: Delete
+    confirm: Are you sure you want to delete your %type%?
+    success: You have sucessfully deleted %type%.
+
+
+  locales:
+    nl: Dutch
+    en: English
+  countries:
+    be: Belgium
+    nl: The Netherlands
+
+  menu:
+    family: family
+    children: children
+    characteristics: characteristics
+    profile: profile
+    admin: administration dashboard
+    user_management: user management
+  
+  registration_form:
+    email: Email
+    plainPassword: Password
+    agreeTerms: I've read and agree to the terms and conditions.
+    already_registered: Already have an account?
+    login_here: Login here
+    registration_success:
+      message: Your registration is succesfull, we have sent you an email to confirm your account.
+      continue_to_login: to continue to login.
+
+  confirmation_email:
+    title: Activeer your account
+    please_confirm: Please confirm your email address by clicking the following link
+    confirm_email: Confirm my Email
+    expires_in: This link will expire in
+
+  login_form:
+    email: Email
+    password: Password
+    remember_me: Remember me
+    not_registered: No account yet?
+    register_here: Make your account here
+
+  family_form:
+    name: Give your family a name
+    not_found_error: Something went wrong, we couldn't find your family.
+
+  child_form:
+    title: Fill in the details of your child
+    name: Name
+    gender: Gender
+    male: Male
+    female: Female
+    height: Height
+    birthday: Birthday
+    error_id: No child was found with this id, or this child is not a member of your family.
+    error_children: No children found in this family.
+
+  user_profile_form:
+    title: Fill in your details
+    name: Name
+    locale: Language
+    location: Location
+    success: Your details have been updated, you can now continue to your families.
+    label: Delete profile
+    message: to delete your profile
+    warning: Careful, all the data associated with your profile will be deleted.
+
+  location_form:
+    city: City
+    country: Country
+
+  children_list:
+    height: Height
+    birthday: Birthday
+
+  user_form:
+    title: User profile
+    user: user
+    name: Name
+    locale: Locale
+    email: Email
+    roles: User role
+    password: Password
+
+  characteristics_list:
+    name: name
+    minAge: Minimum age
+    createdAt: Created at
+    updatedAt: Updated at
+    actions: Actions
+
+  characteristic_form:
+    title: Characteristics
+    name: Name
+    amountType: Age amount
+    months: Month(s)
+    years: Years
+    minAge: Minimum age
+    translations: Language

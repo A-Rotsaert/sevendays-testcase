@@ -1,0 +1,52 @@
+<header class="bg-primary text-white">
+    <div class="container-fluid">
+        <div class="d-flex flex-wrap p-2">
+            <a class="navbar navbar-brand col-md-3  col-lg-2 align-items-start" href="{{ path('app_family') }}"
+               data-turbo-action="replace">
+                <div class="text-white">
+                    {% include('partials/app-logo.html.twig')  with {'textclass': 'text-white'} %}
+                </div>
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mt-1 justify-content-center">
+                <li>
+                    <a href="{{ path('app_family') }}" class="nav-link px-2 text-white" data-turbo-action="replace">
+                        {{ 'app.menu.families'|trans|capitalize }}
+                    </a>
+                </li>
+            </ul>
+
+            <div class="text-end">
+                <div class="flex-shrink-0 dropdown">
+                    <a href="#" class="d-block link-light text-decoration-none dropdown-toggle py-1 mt-1"
+                       id="user-menu-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user"></i>
+                        {{ app.user.userIdentifier }}
+                    </a>
+                    <ul class="dropdown-menu text-small shadow" aria-labelledby="user-menu-dropdown">
+                        <li>
+                            <a class="dropdown-item" href="{{ path('app_user_profile') }}" data-turbo-action="replace">
+                                {{ 'app.menu.profile'|trans|capitalize }}
+                            </a>
+                        </li>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li>
+                                <a class="dropdown-item" href="{{ path('app_admin_dashboard') }}"
+                                   data-turbo-action="replace">
+                                    {{ 'app.menu.admin'|trans|capitalize }}
+                                </a>
+                            </li>
+                        {% endif %}
+                        <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{{ path('app_logout') }}" data-turbo-action="replace">
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

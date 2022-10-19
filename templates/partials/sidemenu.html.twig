@@ -1,0 +1,11 @@
+<div class="col-2 justify-content-start mt-5 me-5">
+    <ul class="nav flex-column">
+        {% for item in items %}
+            <li class="nav-item">
+                <a class="nav-link {{ item.active|default('') }}" href="{{ path(item.path) }}">
+                    {{ item.label|trans }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

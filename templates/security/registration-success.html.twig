@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container d-flex justify-content-center p-4 m-4">
+        <div class="col-5 mt-5 pt-5">
+
+            <div class="mb-2">
+                {% include('partials/app-logo.html.twig') %}
+            </div>
+            <p class="mt-4">
+                <small class="text-muted">{{ 'app.registration_form.registration_success.message'|trans }}</small>
+            </p>
+            <p>
+                <a href="{{ path('app_login') }}" data-turbo-action="replace" class="text-decoration-none">
+                    {{ 'app.click_here'|trans }}
+                </a>
+                <small class="text-muted">{{ 'app.registration_form.registration_success.continue_to_login'|trans }}</small>
+            </p>
+
+        </div>
+    </div>
+{% endblock %}

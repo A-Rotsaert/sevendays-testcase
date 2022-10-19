@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block errors %}
+    {% if error %}
+        <div aria-live="polite" aria-atomic="true" class="position-relative">
+            <div class="toast-container position-absolute top-0 end-0 p-3">
+                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <strong class="me-auto">Error</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        {{ error.messageKey|trans(error.messageData, 'security') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <div class="container d-flex justify-content-center p-4 m-4">
+        <div class="col-5 mt-5 pt-5">
+            {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+            <div class="mb-2">
+                {% include('partials/app-logo.html.twig') %}
+            </div>
+            <p class="mb-4">
+                <small class="text-muted">
+                    {{ 'app.login'|trans|capitalize }} {{ 'app.for'|trans }}
+                    {{ 'app.specialized_advice'|trans }}
+                </small>
+            </p>
+
+            <form action="{{ path('app_login') }}" method="post">
+                <label for="username">{{ 'app.login_form.email'|trans }}:</label>
+                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required"
+                       autofocus="autofocus" class="form-control mb-3"/>
+
+                <label for="password">{{ 'app.login_form.password'|trans }}:</label>
+                <input type="password" id="password" name="_password" required="required" class="form-control mb-3"/>
+
+                <button class="btn btn-lg btn-primary" type="submit">
+                    {{ 'app.login'|trans|capitalize }}
+                </button>&nbsp;
+                <small class="text-muted">
+                    {{ 'app.login_form.not_registered'|trans }}
+                    <a href="{{ path('app_register') }}" data-turbo-action="replace" class="text-decoration-none">
+                        {{ 'app.login_form.register_here'|trans }}
+                    </a>
+                </small>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

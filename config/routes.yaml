@@ -1,0 +1,17 @@
+locale_prefix:
+  resource: ../src/Controller/
+  type: annotation
+  prefix: /{_locale<%app.supported_locales%>?nl}
+  defaults:
+    _locale: nl
+  requirements:
+    _locale: "%app.supported_locales%"
+
+locale_redirect:
+  path: /
+  controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+  defaults:
+    route: app_family
+    permanent: true
+    keepQueryParams: true
+    _locale: nl

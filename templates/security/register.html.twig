@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container d-flex justify-content-center p-4 m-4">
+        <div class="col-5 mt-5 pt-5">
+
+            <div class="mb-2">
+                {% include('partials/app-logo.html.twig') %}
+            </div>
+            <p class="mb-4">
+                <small class="text-muted">
+                    {{ 'app.register'|trans|capitalize }} {{ 'app.for'|trans }}
+                    {{ 'app.specialized_advice'|trans }}
+                </small>
+            </p>
+
+            {{ form_start(form) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.plainPassword) }}
+            <button class="btn btn-primary text-white" type="submit">
+                {{ 'app.register'|trans|capitalize }}
+            </button>&nbsp;
+            <small class="text-muted mb-4">
+                {{ 'app.registration_form.already_registered'|trans }}
+                <a href="{{ path('app_login') }}" data-turbo-action="replace" class="text-decoration-none">
+                    {{ 'app.registration_form.login_here'|trans }}
+                </a>
+            </small>
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+@import url(https://fonts.googleapis.com/css?family=Muli:200,300,400,700);
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+$theme-colors: (
+        "primary": #07689F,
+        "secondary": #C9D6DF,
+        "success": #11D3BC,
+        "danger": #ff5363,
+        "info": #A2D5F2,
+        "warning": #FF7E67,
+        "light": #FAFAFA,
+        "dark": #4e4e4e,
+        "blue": #7ca9ff,
+        "pink": #FFC0CB,
+);
+
+$headings-font-family: Muli;
+$border-radius: 0rem;
+$border-radius-sm: .0rem;
+$border-radius-lg: .0rem;
+
+$btn-border-radius: 0rem;
+
+$input-border-width: 1px;
+$input-border-radius: 0rem;
+$input-border-radius-sm: 0rem;
+$input-border-radius-lg: 0rem;
+$input-focus-box-shadow: 0rem;
+
+$form-select-border-radius: 0rem;

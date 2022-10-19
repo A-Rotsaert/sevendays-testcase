@@ -1,0 +1,29 @@
+@import "_variables.scss";
+@import "~bootstrap/scss/bootstrap";
+@import "~@fortawesome/fontawesome-free/css/all.css";
+@import '../../node_modules/vanillajs-datepicker/dist/css/datepicker-bs5.css';
+
+.navbar {
+  box-shadow: none;
+}
+
+.nav {
+  .nav-item {
+    .nav-link {
+      color: $gray-600;
+    }
+
+    .nav-link.active {
+      color: $primary;
+
+    }
+  }
+}
+
+.dataTables_filter {
+  float: right;
+}
+
+.toast-container {
+  z-index: $zindex-fixed;
+}

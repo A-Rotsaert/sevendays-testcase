@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container d-flex">
+        {% include 'partials/sidemenu.html.twig'
+            with {'items': [
+            {
+                'path': 'app_admin_dashboard',
+                'label': 'app.menu.admin' | trans | capitalize,
+            },
+            {
+                'path': 'app_admin_user_management',
+                'label': 'app.menu.user_management' | trans | capitalize,
+                'active': 'active',
+            },
+            {
+                'path': 'app_admin_characteristics',
+                'label': 'app.menu.characteristics' | trans | capitalize,
+            }
+        ]} %}
+        <div class="justify-content-center col-5 m-4 p-4">
+            <h4>
+                {{ 'app.user_form.title'|trans|capitalize }}
+            </h4>
+            {{ form_start(form) }}
+
+            <div class="row mt-4">
+                <div class="col-8">{{ form_row(form.name) }}</div>
+                <div class="col-4">{{ form_row(form.locale) }}</div>
+            </div>
+            {{ form_row(form.location) }}
+            <div class="row mt-4">
+                <div class="col-8">
+                    <div class="row">{{ form_row(form.email) }}</div>
+                    <div class="row">{{ form_row(form.password) }}</div>
+                </div>
+                <div class="col-4">{{ form_row(form.roles) }}</div>
+            </div>
+
+            <button class="btn btn-primary text-white" type="submit">
+                {{ 'app.save_details'|trans }}
+            </button>
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('datepicker') }}
+{% endblock %}

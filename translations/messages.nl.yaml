@@ -1,0 +1,128 @@
+app:
+  name: Kindadviseur
+  register: Registreer
+  login: Login
+  for: voor
+  specialized_advice: gespecialiseerd advies op maat van uw kind.
+  click_here: Klik hier
+  go_back: Ga terug
+  save_details: Gegevens opslaan
+  child: kind
+  your_profile: uw profiel
+  overview: overzicht
+  total: totaal
+  amount: aantal
+
+  nl:
+    name: Naam
+
+  add:
+    title: toevoegen
+    success: Je %type% is toegevoegd.
+
+  edit:
+    title: bewerken
+    success: Je %type% is nu bijgewerkt.
+
+  delete:
+    title: verwijderen
+    confirm: Ben je zeker dat je %type% wilt verwijderen?
+    success: Je hebt %type% succesvol verwijderd.
+
+  locales:
+    nl: Nederlands
+    en: Engels
+  countries:
+    be: België
+    nl: Nederland
+
+  menu:
+    family: familie
+    families: families
+    children: kinderen
+    characteristics: karaktereigenschappen
+    profile: profiel
+    admin: administratie dashboard
+    user_management: gebruikers beheer
+  
+  registration_form:
+    email: Email
+    plainPassword: Wachtwoord
+    agreeTerms: Ik heb de gebruiksvoorwaarden gelezen en goedgekeurd.
+    already_registered: Al een account?
+    login_here: Log hier in
+    registration_success:
+      message: Uw registratie is gelukt, we hebben u een mail gestuurd om uw account te bevestigen.
+      continue_to_login: om naar de login pagina te gaan.
+
+  confirmation_email:
+    title: Activeer je account
+    please_confirm: Bevestig aub je account door op de volgende link te klikken
+    confirm_email: Bevestig mijn email
+    expires_in: Deze link zal vervallen binnen
+
+  login_form:
+    email: Email
+    password: Wachtwoord
+    remember_me: Onthoud mij
+    not_registered: Nog geen account?
+    register_here: Maak hier uw account aan
+
+  family_form:
+    name: Geef je familie een naam
+    childs_in_family: Kinderen in je familie
+    not_found_error: Er ging iets mis, we kunnen je familie niet vinden.
+
+  child_form:
+    title: Vul de gegevens van je kind in.
+    name: Naam
+    gender: Geslacht
+    male: Jongen
+    female: Meisje
+    height: Hoogte
+    birthday: Verjaardag
+    error_id: Geen kind gevonden met dit id, of dit kind is geen lid van je familie(s).
+    error_children: Geen kinderen gevonden in deze familie.
+
+  user_profile_form:
+    title: Vul je gegevens aan
+    name: Naam
+    locale: Taal
+    location: Locatie
+    success: Je gegevens zijn bijgewerkt, je kan nu verder gaan naar je families.
+    label: Profiel verwijderen
+    message: om je profiel te verwijderen.
+    warning: Let op, alle met uw account geassocieerde data wordt verwijderd.
+
+  location_form:
+    city: Stad
+    country: Land
+
+  children_list:
+    height: Hoogte
+    birthday: Verjaardag
+
+  user_form:
+    title: gebruikers profiel
+    user: gebruiker
+    name: Naam
+    locale: Taal
+    email: Email
+    roles: Gebruikers rol
+    password: Wachtwoord
+
+  characteristics_list:
+    name: Naam
+    minAge: Minimum leeftijd
+    createdAt: Aangemaakt op
+    updatedAt: Bijgewerkt op
+    actions: Acties
+
+  characteristic_form:
+    title: karaktereigenschap
+    name: Naam
+    amountType: Leeftijd ingave
+    months: Maand(en)
+    years: Jaar(en)
+    minAge: Minimum leeftijd
+    translations: Taal
